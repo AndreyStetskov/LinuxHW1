@@ -1,0 +1,14 @@
+"HW" > /tmp/sleeper.sh
+for run in {1..10}
+do
+echo date +"%H_%M_%S"
+echo ps -ef $run
+#sleep 5
+done
+mkdir /test
+cat /etc/oc-release > /test/somethingfile.txt
+grep 'Alpine'
+for file in {1..51}
+do
+touch /test/49.txt $file
+done
