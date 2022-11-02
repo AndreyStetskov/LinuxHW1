@@ -7,7 +7,7 @@ echo ps -ef $run
 done
 mkdir /test
 cat /etc/oc-release > /test/somethingfile.txt
-grep 'Alpine'
+$ grep 'Alpine' somethingfile
 for file in {1..51}
 do
 touch /test/49.txt $file
