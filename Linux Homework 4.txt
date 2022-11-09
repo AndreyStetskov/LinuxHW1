@@ -1,0 +1,81 @@
+First Level
+
+stsia@DESKTOP-6IRHFD1 MINGW64 ~
+$ ssh ec2-user@linux.telran-edu.de
+Last login: Wed Nov  9 19:05:08 2022 from 62.4.35.218
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+17 package(s) needed for security, out of 23 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-33-20 ~]$ cd /opt/43_44_evening_a/Stetskov/
+[ec2-user@ip-172-31-33-20 Stetskov]$ echo -e '#/bin/bash\n date\n echo "It works!"' > taskAndrey.sh
+[ec2-user@ip-172-31-33-20 Stetskov]$ chmod 744 taskAndrey.sh
+[ec2-user@ip-172-31-33-20 Stetskov]$ touch fortaskAndrey.txt
+[ec2-user@ip-172-31-33-20 Stetskov]$ nano taskAndrey.sh
+
+#/bin/bash
+ date
+ echo "It works!"
+
+for file in {1..10}
+  do
+    touch /opt/43_44_evening_a/Stetskov/1date +%H%M%S.txt $file
+  done
+
+[ec2-user@ip-172-31-33-20 Stetskov]$ export EDITOR=nano
+[ec2-user@ip-172-31-33-20 Stetskov]$ crontab -e
+
+
+*/15 * * * * /opt/43_44_evening_a/Stetskov/taskAndrey.sh >> /opt/43_44_evening_a/Stetskov/fortaskAndrey.txt
+
+-----------------------------------------------------------------------------------------------------------
+Second Level
+
+nano
+~# nano fullscript.sh
+
+
+#!/bin/bash 
+echo "Hello Student!"
+ 
+echo -n "Enter your name here"
+read name
+echo "Welcome to terminal, $name"
+ 
+mkdir /tmp/test/
+ 
+echo date +%H_%M_%S > /tmp/test/mydate.txt                    
+ 
+echo "Saving data"
+ 
+for couting in {1..10}
+  do
+    echo $couting
+    sleep 0.5
+  done
+ 
+echo "Data saved, continue work"
+ 
+df -h >> /tmp/test/mydate.txt
+# I don't know what is meant by human form
+ 
+mkdir /opt/mydate
+cp /tmp/test/mydate.txt /opt/mydate/newmydate.txt
+ 
+for waiting {1..5}
+
+ do
+    echo $waiting
+    sleep 1
+  done
+ 
+echo "Well done boss"
+
+cp /tmp/fullscript.sh /bin
+
+
+~# chmod u+x /bin/fullscript.sh
